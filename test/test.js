@@ -1,3 +1,5 @@
+'use strict'
+
 import expect from 'expect'
 
 const describe = global.describe
