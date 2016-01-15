@@ -24,7 +24,6 @@ clean:
 	${DOCKER_CMD} rmi ${ORG}/${REPO}:${TAG}
 
 npm:
-	./node_modules/.bin/gulp clean
 	./node_modules/.bin/gulp finalize
 	npm publish
 

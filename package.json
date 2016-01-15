@@ -1,6 +1,6 @@
 {
   "name": "erudb",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A data-store for the modern world",
   "main": "_build/index.js",
   "scripts": {
@@ -14,8 +14,7 @@
     "url": "git+ssh://git@github.com/erulabs/erudb.git"
   },
   "keywords": [
-    "discord",
-    "bot"
+    "nosql", "javascript", "datastore", "replicated", "replication", "persistence", "persistent", "eru", "database", "lite", "light", "weight", "leveldb"
   ],
   "contributors": [
     {
