@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "./node_modules/.bin/gulp watch",
     "start": "node _build/cli.js",
-    "test": "./node_modules/.bin/gulp"
+    "test": "./node_modules/.bin/gulp test"
   },
   "bin": "_build/cli.js",
   "repository": {
@@ -16,12 +16,8 @@
   "keywords": [
     "nosql", "javascript", "datastore", "replicated", "replication", "persistence", "persistent", "eru", "database", "lite", "light", "weight", "leveldb"
   ],
-  "contributors": [
-    {
-      "name": "Seandon Mooy"
-    }
-  ],
-  "license": "ISC",
+  "author": "Seandon Mooy <seandon.mooy@",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/erulabs/erudb/issues"
   },

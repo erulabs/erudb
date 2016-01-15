@@ -18,7 +18,7 @@ gulp.task('clean', function () {
 })
 
 gulp.task('main', function () {
-  return gulp.src(`${SRC}/*.js`)
+  gulp.src(`${SRC}/*.js`)
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(sourcemaps.init())
@@ -32,7 +32,7 @@ gulp.task('watch', ['default'], function () {
   gulp.watch(`${SRC}/*.js`, ['main', server.restart])
 })
 
-gulp.task('finalize', ['default'], function () {
+gulp.task('finalize', function () {
   prepend('./_build/cli.js', '#!/usr/bin/env node\n')
   fs.chmodSync('./_build/cli.js', '0770')
 })
@@ -42,4 +42,4 @@ gulp.task('test', function () {
     .pipe(mocha({ reporter: 'spec' }))
 })
 
-gulp.task('default', ['clean', 'main', 'test'])
+gulp.task('default', ['clean', 'main'])
