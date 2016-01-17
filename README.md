@@ -2,6 +2,8 @@
 
 [![Dependency Status](https://img.shields.io/david/erulabs/erudb.svg?style=flat-square)](https://david-dm.org/erulabs/erudb) [![devDependency Status](https://img.shields.io/david/dev/erulabs/erudb.svg?style=flat-square)](https://david-dm.org/erulabs/erudb#info=devDependencies) [![npm downloads](https://img.shields.io/npm/dm/erudb.svg?style=flat-square)](https://www.npmjs.com/package/erudb) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/erulabs/erudb)
 
+# Nothing to see here just yet :)
+
 # About
 __EruDB__ (e-roo-deebee) __is a persistent, distributed, and fault-tolerant key-value data store__ written in ES6, powered by NodeJS, and backed by LevelDB. It features durable replication, service discovery, real-time events and superior at-rest and at-transport encryption features.
 
@@ -29,7 +31,7 @@ import EruDB from 'erudb'
 const db = new EruDB.Client({
   host: '127.0.0.1',
   port: 9040
-}).select('database')
+}).use('database')
 
 db.get('key').then((err, value) => {
   console.log(value)
@@ -58,7 +60,7 @@ Note that all `Services` are also `Clients`!
 ```javascript
 const db = new EruDB.Service({
   port: 9040
-}).select('database').get('key').then((err, value) => {
+}).use('database').get('key').then((err, value) => {
   console.log(value)
 })
 ```
@@ -72,7 +74,7 @@ const db = new EruDB.Service({
   peers: {
     loadBalancer: 'load_balancer:port'
   }
-}).select('database').get('key').then((err, value) => {
+}).use('database').get('key').then((err, value) => {
   console.log(value)
 })
 ```
@@ -89,7 +91,7 @@ const db = new EruDB.Service({
       key: 'erudb_peers'
     }
   }
-}).select('database').get('key').then((err, value) => {
+}).use('database').get('key').then((err, value) => {
   console.log(value)
 })
 ```
@@ -121,6 +123,7 @@ const db = new EruDB.Service({
   2. You cannot avoid authorization, ever. EruDB instances are ___auditable___.
   3. You cannot insert invalid data, ever. EruDB instances are ___sane___.
   4. You cannot disable warnings for clusters which are not highly available by design. EruDB clusters are ___resiliant___.
+  5. EruDB instances only maintain sockets with a number of EruDB instances equal to it's __quorum__ for Safe operations. This means, when configured properly in conjunction with sharding, EruDB cluters are ___massively scalable___.
 
 #### Configuration
 Some settings can be changed in realtime via the management interface, but this is highly discouraged. Instead, treat EruDB like an _immutable_ web service and launch new instances with new configuration and destroy old instances when ready.
