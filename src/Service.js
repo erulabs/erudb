@@ -1,4 +1,4 @@
-'use strict'
+'use strong'
 
 import Client from './Client.js'
 
@@ -15,7 +15,7 @@ export default class {
     this.use = this.client.use
   }
 
-  validateOptions (opts) {
+  validateOptions (opts = {}) {
     if (!opts.host) opts.host = 'localhost'
     if (!opts.port) opts.port = 9040
     if (!opts.expectedPeerCount) opts.expectedPeerCount = 3

@@ -1,4 +1,4 @@
-'use strict'
+'use strong'
 
 // EruDB Client
 export default class {

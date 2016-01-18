@@ -1,9 +1,6 @@
-'use strict'
+'use strong'
 
-import EruDBClient from './Client.js'
-import EruDBService from './Service.js'
+import Client from './Client.js'
+import Service from './Service.js'
 
-export default {
-  Client: EruDBClient,
-  Service: EruDBService
-}
+export default { Client, Service }

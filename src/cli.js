@@ -1,4 +1,4 @@
-'use strict'
+'use strong'
 
 import yargs from 'yargs'
 const cliName = 'erudb'
