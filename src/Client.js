@@ -1,14 +1,22 @@
 'use strong'
 
+import {
+  validateClientOptions
+} from './helpers.js'
+
 // EruDB Client
 export default class {
-  get () {
-
+  constructor (rawOptions, service = false) {
+    this.opts = validateClientOptions(rawOptions)
+    if (service) this.localService = service
   }
-  put () {
-
+  get (key) {
+    return this
   }
-  use () {
-
+  put (key, value) {
+    return this
+  }
+  use (database) {
+    return this
   }
 }
